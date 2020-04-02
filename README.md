@@ -9,3 +9,6 @@
 
 ## 개발독스
 https://www.notion.so/TYPERS-f8cb25bb537644a9871d06be8054f4ab
+
+## 디자인 Layout
+https://xd.adobe.com/view/29a3ee88-6bd1-457c-5b70-03a3076ce24b-5f92/
