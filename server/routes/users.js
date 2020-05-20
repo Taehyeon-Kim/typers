@@ -1,3 +1,4 @@
+// TODO : user 미들웨어 설정 및 라우터에 반영
 var express = require('express');
 var router = express.Router();
 
