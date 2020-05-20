@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link rel="stylesheet" href="./stylesheets/reset.css" />
+    <title>container-read (only read)</title>
+  </head>
+  <body>
+    <div class="top-menu">
+      <a href="./index.html"><div class="keyboard">키보드</div></a>
+      <a href="./onlyRead.html"><div class="read">읽기</div></a>
+      <a href="./write.html"><div class="write">쓰기</div></a>
+    </div>
+
+    <div class="status-bar">
+      <div class="status"></div>
+      <a href="#"><span class="my_btn ir_pm">img</span></a>
+    </div>
+
+    <form class="WRITE" action="" method="POST">
+        <div class="Qbox">
+          <div class="w-container">
+            <div class="write-title">
+              <input type="text" id="title" placeholder="파이썬 리스트 관련 질문"/>
+            </div>
+            <div class="write-contents">
+              <textarea
+                id="contents"
+                placeholder="Invaild syntax error가 계속 뜨네요."
+              ></textarea>
+            </div>
+            <div class="user-info">
+              @TAE_KKI / RANK 7 / GOLD
+            </div>
+        </div>
+        </div>
+        <!-- Qbox -->
+        <div class="Abox">
+          <div class="w-container">
+            <div class="write-contents">
+              <textarea
+                id="contents"
+                placeholder="코드를 보니 입력함수에서 괄호를 하나 덜 쓰신 것으로 보입니다."
+              ></textarea>
+            </div>
+            <div class="user-info">
+              @BRIANJUNE / RANK 2 / PLATINUM
+            </div>
+          </div>
+        </div>
+        <!-- Abox -->
+      </div>
+    </form>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
