@@ -72,6 +72,7 @@ const display_signupmodal = (event,message)=>{
 };
 
 const destroy_signupmodal = (event,message)=>{
+  console.log('merong');
   win.webContents.send('hide-page');
   modal.close();
 };
