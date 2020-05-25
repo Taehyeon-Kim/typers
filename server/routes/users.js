@@ -2,9 +2,27 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const signin = require('./middleware/signin');
+const signup = require('./middleware/signup');
+const token = require('./middleware/token');
+
+router.post('/',
+  signup.create_user,
+  signup.save_user,
+  signup.response_to_user
+);
+router.post('/login',
+  signin.validate_parameter,
+  signin.compare_password,
+  signin.create_jwt,
+  signin.update_user_with_token,
+  signin.response_to_user
+);
+router.get('/token',
+  token.validate_parameter,
+  token.verify_token,
+  token.create_token,
+  token.response_to_user
+);
 
 module.exports = router;

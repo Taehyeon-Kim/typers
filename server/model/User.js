@@ -6,6 +6,7 @@ let UserSchema = new Schema({
   password:{type:String, required:true},
   token:String,
   agoToken:String,
+  socketId:String,
   posts:[{type:Schema.Types.ObjectId, ref:'Post'}],
   recent_login:Date,
   info:{

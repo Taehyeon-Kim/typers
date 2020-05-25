@@ -10,6 +10,8 @@ const usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
 const Initializer = require('./init/initializer');
 const User = require('./model/User');
+const Post = require('./model/Post');
+// TODO : SOCKETROUTES
 const jwt= require('jsonwebtoken');
 
 const app = express();
@@ -38,6 +40,7 @@ app.use(function(req, res, next) {
 // 일단 io-jwt관련 코드는 의미를 모르지만
 // https://github.com/KangJunewoo/Electron_SocketIO_study
 // 에서 그대로 가져옴. 추후에 주석달며 공부할 계획.
+// TODO : 수많은 SOCKETROUTES로 대체하기
 
 io.use((socket, next)=>{
   const token = socket.handshake.query.token;

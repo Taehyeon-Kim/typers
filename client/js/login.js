@@ -9,8 +9,8 @@
 
   signin_button.addEventListener('click', ()=>{
     const id = document.getElementById('input-id').value;
-    const pw = document.getElementById('input-pw').value;
-    const parameter={id:id,pw:pw};
+    const password = document.getElementById('input-password').value;
+    const parameter={id:id,password:password};
     ipcRenderer.send('signin_request', parameter);
   });
   ipcRenderer.on('signin_request_success', (event,message)=>{
