@@ -2,7 +2,6 @@
   const electron = require('electron');
 
   const ipcRenderer = electron.ipcRenderer;
-  // TODO : 소켓이벤트 등록
 
   const signin_button = document.getElementById('button-signin');
   const signup_button = document.getElementById('button-signup');
@@ -26,7 +25,8 @@
 
   });
   signup_button.addEventListener('click', ()=>{
-    ipcRenderer.send('display_signup_modal');
+    console.log('merong');
+    ipcRenderer.send('display_signupmodal');
   })
 
 })();

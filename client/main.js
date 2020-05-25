@@ -48,6 +48,7 @@ const display_loginwindow = (event,message)=>{
 };
 
 const display_signupmodal = (event,message)=>{
+  console.log('hi');
   win.webContents.send('hide-page');
   options={
     parent:win,
