@@ -14,8 +14,8 @@
   });
   ipcRenderer.on('signin_request_success', (event,message)=>{
     console.log(message);
-    alert('로그인 성공');
-    ipcRenderer.send('display_waitdialog', message);
+    alert('로그인 성공했는데 왜 고메인이 안될까!!');
+    ipcRenderer.send('go_main');
   });
   ipcRenderer.on('signin_request_failed', (event, message)=>{
     console.log(message);

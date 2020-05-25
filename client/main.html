@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <title>container-keyboard</title>
+  </head>
+  <body>
+    <div class="top-menu">
+      <a href="./main.html"><div class="keyboard">키보드</div></a>
+      <a href="./onlyRead.html"><div class="read">읽기</div></a>
+      <a href="./write.html"><div class="write">쓰기</div></a>
+    </div>
+    <div class="status-bar">
+      <div class="status"></div>
+      <a href="#"><span class="my_btn ir_pm">img</span></a>
+    </div>
+    <div class="CAFE">
+      <div class="k0">
+        <div class="k-container">
+          <div class="line1">line1</div>
+          <div class="line2">line2</div>
+          <div class="line3">line3</div>
+          <div class="line4">line4</div>
+          <div class="line5">line5</div>
+          <div class="line6">line6</div>
+        </div>
+      </div>
+      <div class="k1">
+        <div class="k-container">
+          <div class="line1">line1</div>
+          <div class="line2">line2</div>
+          <div class="line3">line3</div>
+          <div class="line4">line4</div>
+          <div class="line5">line5</div>
+          <div class="line6">line6</div>
+        </div>
+      </div>
+      <div class="k2">
+        <div class="k-container">
+          <div class="line1">line1</div>
+          <div class="line2">line2</div>
+          <div class="line3">line3</div>
+          <div class="line4">line4</div>
+          <div class="line5">line5</div>
+          <div class="line6">line6</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>

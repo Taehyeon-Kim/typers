@@ -78,7 +78,6 @@ const destroy_signupmodal = (event,message)=>{
 };
 
 const create_signup_request=(event,message)=>{
-  // TODO : 백엔드 설계
   httpInstance.post('/users', message)
     .then((response)=>{
       event.sender.send('signup_request_success', response);
@@ -107,64 +106,28 @@ const create_signin_request=(event,message)=>{
     })
 };
 
-const display_waitdialog = (event,message)=>{
-  const options={
-    width:800,
-    height:800,
-    resizeable:false,
-    fullscreenable:false,
-    show:false,
-    frame:false,
-    webPreferences:{affinity:true,nodeIntegration:true}
-  };
-  waitdialog = new BrowserWindow(options);
-  waitdialog.loadURL(url.format({
-    pathname:path.join(__dirname, 'waitdialog.html'),
-    protocol:'file'
-  }))
-  waitdialog.once('ready-to-show', ()=>{
-    win.hide();
-    waitdialog.show();
-    const socketURL = 'ws://127.0.0.1:3000';
-    const socketOptions={
-      transports:['websocket'],
-      forceNew:true,
-      // TODO : 토큰매니저 만들어 id token 입력 쿼리에 삽입
-      query:{}
-    };
-    // TODO : 소켓만들고, 토큰설정하고, 정상/에러 리스너 만들고 메인윈도우액션
-    
-  });
-  waitDialog.on('closed', ()=>{
-    waitDialog=null;
-  })
-};
-
-const destroy_waitdialog = (event,message)=>{
-  // TODO : 리스너 제거
+const go_main = (event, message)=>{
   win.webContents.clearHistory();
-  win.setResizable(true);
-  win.setFullScreenable(true);
-  win.setMinimumsize(600,600);
+  win.resizable=true;
+  win.fullScreenable=true;
+  win.setMinimumSize(600,600);
   win.loadURL(url.format({
-    pathname:path.join(__dirname,'main.html'),
+    pathname:path.join(__dirname, 'main.html'),
+    protocol:'file',
+    slashes:true,
   }));
   win.once('ready-to-show', ()=>{
-    // TODO : 소켓서비스 핸들러랑 토큰매니저 등록
-    waitDialog.close();
-    // TODO : 토큰매니저, 로케일 등록
     win.show();
   });
-};
+}
 
 app.on('ready', display_loginwindow);
 
-ipcMain.on('display_waitdialog', display_waitdialog);
-ipcMain.on('destroy_waitdialog', destroy_waitdialog);
 ipcMain.on('display_signupmodal', display_signupmodal);
 ipcMain.on('destroy_signupmodal', destroy_signupmodal);
 ipcMain.on('signup_request', create_signup_request);
 ipcMain.on('signin_request', create_signin_request);
+ipcMain.on('go_main', go_main);
 app.on('window-all-closed', ()=>{
   app.quit();
 })
