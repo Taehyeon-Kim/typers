@@ -1,0 +1,8 @@
+id명은 모두
+input-id
+button-signup
+이런식으로 하고
+
+이벤트명은 snake_case로
+signin_request_success
+이런식으로 함.
