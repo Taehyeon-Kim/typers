@@ -14,4 +14,24 @@ server : users 라우팅 완료
     성공하면 main으로 넘어가고
     실패하면 경고창만 띄우기
 
-2. 탭 간 전환
+2. main으로 넘어오기 전까지.
+  main.html 하나에 세개를 다 몰아넣고
+  각각을 button으로 처리한 다음에
+  눌린 버튼에 따라 display를 block과 none으로 조절하자.
+
+  백에 접근해 데이터를 수정하고 받아와야 한다.
+  online True로 바꿔주고
+  current_menu가 있다면 그거 받아와주고
+  recent_login 현재시각 넣어주고
+
+
+  기본적으로 httpResponse 객체를 활용해서 하자.
+
+3. main에서 머물때
+
+
+4. 종료할때
+  online False로 바꿔주고
+  curent_menu 저장해주고
+  Date.now - recent_login 만큼 hours에 더해주기
+  
