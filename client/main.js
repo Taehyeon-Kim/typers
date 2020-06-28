@@ -5,12 +5,12 @@ const path = require("path");
 
 // 여기에 들어갈
 // 수많은 import와 이벤트들
-const display_loginwindow = (event, message) => {
+const display_mainwindow = (event, message) => {
   // 1-1. 옵션 설정해 win창에 담고
   const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
   const options = {
-    width: 640,
-    height: 1000,
+    width: width,
+    height: height,
     resizeable: false,
     fullscreenable: false,
     show: false,
@@ -22,7 +22,6 @@ const display_loginwindow = (event, message) => {
   win = new BrowserWindow(options);
 
   // 1-2. html파일 정해주고
-  // TODO : 일단 로그인 스킵.
   win.loadURL(
     url.format({
       pathname: path.join(__dirname, "main.html"),
@@ -44,93 +43,8 @@ const display_loginwindow = (event, message) => {
   });
 };
 
-const display_signupmodal = (event, message) => {
-  console.log("hi");
-  win.webContents.send("hide-page");
-  options = {
-    parent: win,
-    modal: true,
-    show: false,
-    webPreferences: { nodeIntegration: true },
-  };
-  modal = new BrowserWindow(options);
+app.on("ready", display_mainwindow);
 
-  modal.loadURL(
-    url.format({
-      pathname: path.join(__dirname, "signup_modal.html"),
-      protocol: "file",
-    })
-  );
-
-  modal.once("ready-to-show", () => {
-    modal.show();
-  });
-  modal.on("closed", () => {
-    modal = null;
-  });
-};
-
-const destroy_signupmodal = (event, message) => {
-  console.log("merong");
-  win.webContents.send("hide-page");
-  modal.close();
-};
-
-const create_signup_request = (event, message) => {
-  httpInstance
-    .post("/users", message)
-    .then((response) => {
-      event.sender.send("signup_request_success", response);
-    })
-    .catch((error) => {
-      const result = {
-        status: error.response.status,
-        statusText: error.response.statusText,
-      };
-      event.sender.send("signup_request_failed", result);
-    });
-};
-
-const create_signin_request = (event, message) => {
-  httpInstance
-    .post("/users/login", message)
-    .then((response) => {
-      // TODO : 토큰매니저로 setId
-      event.sender.send("signin_request_success", response);
-    })
-    .catch((error) => {
-      const result = {
-        status: error.response.status,
-        statusText: error.response.statusText,
-      };
-      event.sender.send("signin_request_failed", result);
-    });
-};
-
-const go_main = (event, message) => {
-  win.webContents.clearHistory();
-  win.resizable = false;
-  win.fullScreenable = true;
-  win.setMinimumSize(640, 1000);
-  win.loadURL(
-    url.format({
-      pathname: path.join(__dirname, "main.html"),
-      protocol: "file",
-      slashes: true,
-    })
-  );
-  win.once("ready-to-show", () => {
-    win.show();
-  });
-};
-
-app.on("ready", display_loginwindow);
-
-ipcMain.on("display_signupmodal", display_signupmodal);
-ipcMain.on("destroy_signupmodal", destroy_signupmodal);
-ipcMain.on("signup_request", create_signup_request);
-ipcMain.on("signin_request", create_signin_request);
-ipcMain.on("go_main", go_main);
 app.on("window-all-closed", () => {
   app.quit();
 });
