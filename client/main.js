@@ -2,12 +2,6 @@ const electron = require("electron");
 const { app, BrowserWindow, ipcMain } = electron;
 const url = require("url");
 const path = require("path");
-const io = require("socket.io-client");
-
-const axios = require("axios");
-const httpInstance = axios.create({
-  baseURL: "http://127.0.0.1:3000",
-});
 
 // 여기에 들어갈
 // 수많은 import와 이벤트들
@@ -28,9 +22,10 @@ const display_loginwindow = (event, message) => {
   win = new BrowserWindow(options);
 
   // 1-2. html파일 정해주고
+  // TODO : 일단 로그인 스킵.
   win.loadURL(
     url.format({
-      pathname: path.join(__dirname, "login.html"),
+      pathname: path.join(__dirname, "main.html"),
       protocol: "file",
       slashes: true,
     })

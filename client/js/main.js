@@ -1,3 +1,10 @@
+const io = require('socket.io-client')
+const socket = io('http://localhost:3000');
+
+socket.on('connect', ()=>{
+  console.log('connected!');
+})
+
 (()=>{
   const cafe_button = document.getElementById('button-cafe');
   const read_button = document.getElementById('button-read');
