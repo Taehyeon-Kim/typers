@@ -1,0 +1,30 @@
+{
+  "name": "typers",
+  "version": "1.0.0",
+  "description": "🧑🏻‍💻`TYPERS` [사전적정의] '세상을 누르는 사람들'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taehyeon-Kim/typers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taehyeon-Kim/typers/issues"
+  },
+  "homepage": "https://github.com/Taehyeon-Kim/typers#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.0",
+    "socket.io": "^2.3.0"
+  }
+}
