@@ -106,6 +106,23 @@
 }
 /* keyboard */
 
+.st0 {
+  fill: none;
+  stroke: #fe7559;
+}
+.st1 {
+  fill: #263137;
+}
+.tg {
+  fill: #fe7559;
+}
+.k1 .st0 {
+  stroke: #707070;
+}
+.k2 .st0 {
+  stroke: #707070;
+}
+
 .k-container {
   position: absolute;
   /* background-color: #fffdfd; */
@@ -118,35 +135,13 @@
   margin: auto;
 }
 
-.k-container .line1 {
-  height: 18px;
-  border: 1px solid #d8737f;
-  margin-bottom: 5px;
+.option-bar {
+  position: absolute;
+  top: 250px;
+  background: #fff;
+  height: 20px;
 }
-.k-container .line2 {
-  height: 28px;
-  border: 1px solid #d8737f;
-  margin-bottom: 5px;
-}
-.k-container .line3 {
-  height: 28px;
-  border: 1px solid #d8737f;
-  margin-bottom: 5px;
-}
-.k-container .line4 {
-  height: 28px;
-  border: 1px solid #d8737f;
-  margin-bottom: 5px;
-}
-.k-container .line5 {
-  height: 28px;
-  border: 1px solid #d8737f;
-  margin-bottom: 5px;
-}
-.k-container .line6 {
-  height: 28px;
-  border: 1px solid #d8737f;
-}
+
 /* keyboard container */
 
 /* container-write */
