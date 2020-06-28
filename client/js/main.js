@@ -1,14 +1,9 @@
 const io = require('socket.io-client')
 const socket = io('http://localhost:3000');
+require('./js/key');
 
-const 사각형_26 = document.querySelector('.사각형_26');
-
-function key_blink({key, user}){
-  console.log(key);
-  사각형_26.classList.add('tg');
-  setTimeout(()=>{
-    사각형_26.classList.remove('tg');
-  }, 100);
+function key_blink({keyCode, user}){
+  blink_selected_key(keyCode);
 }
 
 document.addEventListener('keydown', (e)=>{
