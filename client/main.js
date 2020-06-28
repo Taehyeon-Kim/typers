@@ -19,7 +19,9 @@ const display_mainwindow = (event, message) => {
       nodeIntegration: true,
     },
   };
+  // 실시간 통신을 위해 두 개의 일렉트론 창 생성
   win = new BrowserWindow(options);
+  win2 = new BrowserWindow(options);
 
   // 1-2. html파일 정해주고
   win.loadURL(
@@ -31,14 +33,25 @@ const display_mainwindow = (event, message) => {
   );
   win.webContents.openDevTools();
 
+  win2.loadURL(
+    url.format({
+      pathname: path.join(__dirname, "main.html"),
+      protocol: "file",
+      slashes: true,
+    })
+  );
+  win2.webContents.openDevTools();
+
   // 1-3. 준비완료될때 띄우고 닫았을때 종료해줌.
   win.once("ready-to-show", () => {
     console.log("ready-to-show");
     win.show();
+    win2.show();
   });
   win.on("closed", () => {
     console.log("window closed");
     win = null;
+    win2=null;
     app.quit();
   });
 };
