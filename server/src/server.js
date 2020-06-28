@@ -28,6 +28,7 @@ const io = socketIO.listen(server);
 io.on('connection', (socket)=>{
   console.log('somebody connected!');
   socket.on('key_press', ({key})=>{
+    console.log(`${key} pressed`);
     // TODO : user는 일단 모두 익명으로 하자.
     socket.broadcast.emit('key_blink', {
       key:key,

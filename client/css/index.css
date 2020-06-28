@@ -120,6 +120,22 @@
   margin: 0 auto;
 }
 /* keyboard */
+.st0 {
+  fill: none;
+  stroke: #fe7559;
+}
+.st1 {
+  fill: #263137;
+}
+.tg {
+  fill: #fe7559;
+}
+.k1 .st0 {
+  stroke: #707070;
+}
+.k2 .st0 {
+  stroke: #707070;
+}
 
 .k-container {
   position: absolute;
