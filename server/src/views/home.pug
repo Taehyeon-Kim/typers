@@ -1,0 +1,77 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+  meta(http-equiv='Content-Security-Policy' content="default-src 'self'; script-src 'self'")
+  meta(http-equiv='X-Content-Security-Policy' content="default-src 'self'; script-src 'self'")
+  link(rel='stylesheet' href='index.css')
+  link(rel='stylesheet' href='reset.css')
+  title container-keyboard
+.top-menu
+  button#button-cafe.keyboard &#xD0A4;&#xBCF4;&#xB4DC;
+  button#button-read.read &#xC77D;&#xAE30;
+  button#button-write.write &#xC4F0;&#xAE30;
+.status-bar
+  .status
+  a(href='#')
+    span.my_btn.ir_pm img
+// 3개의 html을 main.html 하나로 몰고, js로 버튼 클릭할때마다 display: block / none 변경함.
+#cafe
+  .CAFE
+    .k0
+      .k-container
+        .line1 line1
+        .line2 line2
+        .line3 line3
+        .line4 line4
+        .line5 line5
+        .line6 line6
+    .k1
+      .k-container
+        .line1 line1
+        .line2 line2
+        .line3 line3
+        .line4 line4
+        .line5 line5
+        .line6 line6
+    .k2
+      .k-container
+        .line1 line1
+        .line2 line2
+        .line3 line3
+        .line4 line4
+        .line5 line5
+        .line6 line6
+#read
+  form.WRITE(action='' method='POST')
+    .Qbox
+      .w-container
+        .write-title
+          input#title(type='text' placeholder='파이썬 리스트 관련 질문')
+        .write-contents
+          textarea#contents(placeholder='Invaild syntax error가 계속 뜨네요.')
+        .user-info
+          | @TAE_KKI / RANK 7 / GOLD
+    // Qbox
+    .Abox
+      .w-container
+        .write-contents
+          textarea#contents(placeholder='코드를 보니 입력함수에서 괄호를 하나 덜 쓰신 것으로 보입니다.')
+        .user-info
+          | @BRIANJUNE / RANK 2 / PLATINUM
+    // Abox
+#write
+  form.WRITE(action='' method='POST')
+    .w-container
+      .post-title
+        | &#xB098;&#xC758; #&#xBC88;&#xC9F8; &#xC9C8;&#xBB38;
+      .write-title
+        input#title(type='text' placeholder='제목을 입력해주세요.')
+      .write-contents
+        textarea#contents(placeholder='질문 내용을 입력해주세요.')
+      .write-info-bar
+        .info
+        button(type='submit') &#xAE00;&#xC4F0;&#xAE30;
+// You can also require other files to run in this process
+script(src='/socket.io/socket.io.js')
+script(src="/index.js")
