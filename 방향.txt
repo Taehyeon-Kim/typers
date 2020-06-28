@@ -1,0 +1,19 @@
+https://stackoverflow.com/questions/60333120/how-do-i-implement-socket-io-in-an-electron-app
+짱짱답변
+
+소켓서버를 어디엔가 두고
+말단에서 돌아가는 일렉트론은 한개의 socket.io client instance를 가지면 된다.
+
+소켓서버는 익스프레스로 3000번 포트에서 듣게 하고, io가 그걸 참조해 on connection 뭐시기 하면 된다.
+
+일렉트론은 그냥 돌리되, /socket.io/socket.io.js 불러오고
+const socket = io('서버돌아가는 그 주소');
+socket.on('connect')
+socket.on('eventasdf')
+socket.on('disconnect')
+
+그럼 여기서 정할것들은
+  1. client-server 체제는 그대로 가져가자.
+    client는 그냥 일렉트론으로.
+    server는 익스프레스인데 뭐 딱히 띄울 건 없다.
+  2. axios 아직은 안써도 된다 -> 나중에 get, post 등의 요청이 필요할 때 생각해보자..
