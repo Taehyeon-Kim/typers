@@ -31,7 +31,7 @@ io.on('connection', (socket)=>{
     console.log(`${key} pressed`);
     // TODO : user는 일단 모두 익명으로 하자.
     socket.broadcast.emit('key_blink', {
-      key:key,
+      keyCode:key,
       user:socket.user || 'Anonymous'
     });
   });
