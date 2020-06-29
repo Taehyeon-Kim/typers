@@ -472,3 +472,30 @@ document.addEventListener("keydown", function (e) {
     }, 100);
   }
 });
+
+var st0 = document.querySelectorAll(".k0 .st0");
+var theme1 = document.querySelector(".theme1");
+var theme2 = document.querySelector(".theme2");
+var theme3 = document.querySelector(".theme3");
+var theme4 = document.querySelector(".theme4");
+
+theme1.addEventListener("click", function () {
+  for (var i = 0; i < st0.length; i++) {
+    st0[i].style.stroke = "#6b5d79";
+  }
+});
+theme2.addEventListener("click", function () {
+  for (var i = 0; i < st0.length; i++) {
+    st0[i].style.stroke = "#ab6c82";
+  }
+});
+theme3.addEventListener("click", function () {
+  for (var i = 0; i < st0.length; i++) {
+    st0[i].style.stroke = "#d8737f";
+  }
+});
+theme4.addEventListener("click", function () {
+  for (var i = 0; i < st0.length; i++) {
+    st0[i].style.stroke = "#fcbb6d";
+  }
+});

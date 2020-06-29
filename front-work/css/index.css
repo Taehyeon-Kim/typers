@@ -134,14 +134,66 @@
   height: 195px;
   margin: auto;
 }
-
+.k0-name {
+  position: absolute;
+  top: -35px;
+  font-size: 25px;
+  color: #9f9f9f;
+}
+.k1-name {
+  position: absolute;
+  top: -35px;
+  font-size: 25px;
+  color: #9f9f9f;
+}
+.k2-name {
+  position: absolute;
+  top: 17px;
+  font-size: 25px;
+  color: #9f9f9f;
+}
 .option-bar {
   position: absolute;
-  top: 250px;
-  background: #fff;
-  height: 20px;
+  top: 255px;
+  width: 225px;
+  height: 27px;
 }
-
+.theme1 {
+  width: 55px;
+  height: 22px;
+  background: #6b5d79;
+  float: left;
+}
+.theme2 {
+  width: 55px;
+  height: 22px;
+  background: #ab6c82;
+  float: left;
+}
+.theme3 {
+  width: 55px;
+  height: 22px;
+  background: #d8737f;
+  float: left;
+}
+.theme4 {
+  width: 55px;
+  height: 22px;
+  background: #fcbb6d;
+  float: left;
+}
+.theme1:hover {
+  opacity: 0.5;
+}
+.theme2:hover {
+  opacity: 0.5;
+}
+.theme3:hover {
+  opacity: 0.5;
+}
+.theme4:hover {
+  opacity: 0.5;
+}
 /* keyboard container */
 
 /* container-write */
