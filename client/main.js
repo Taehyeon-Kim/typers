@@ -9,8 +9,8 @@ const display_mainwindow = (event, message) => {
   // 1-1. 옵션 설정해 win창에 담고
   const { width, height } = electron.screen.getPrimaryDisplay().workAreaSize;
   const options = {
-    width: width,
-    height: height,
+    width: 640,
+    height: 990,
     resizeable: false,
     fullscreenable: false,
     show: false,
@@ -51,7 +51,7 @@ const display_mainwindow = (event, message) => {
   win.on("closed", () => {
     console.log("window closed");
     win = null;
-    win2=null;
+    win2 = null;
     app.quit();
   });
 };

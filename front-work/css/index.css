@@ -11,6 +11,7 @@
   height: 50px;
   font-size: 24px;
   line-height: 50px;
+  background-color: #3d4043;
   color: #fffdfd;
   border-right: 2px solid #666666;
   display: block;
@@ -21,6 +22,7 @@
   height: 50px;
   font-size: 24px;
   line-height: 50px;
+  background-color: #3d4043;
   color: #fffdfd;
   border-right: 2px solid #666666;
   display: block;
@@ -32,6 +34,7 @@
   font-size: 24px;
   line-height: 50px;
   padding-right: -50px;
+  background-color: #3d4043;
   color: #fffdfd;
   display: block;
   float: left;
@@ -260,7 +263,7 @@ button {
   width: 118px;
   height: 57px;
   border-radius: 7px;
-  background: #fcbb6d;
+  /* background: #fcbb6d; */
 }
 /* //container-write */
 

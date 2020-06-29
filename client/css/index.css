@@ -1,13 +1,13 @@
 #cafe {
-  display:block;
+  display: block;
 }
 
 #read {
-  display:none;
+  display: none;
 }
 
 #write {
-  display:none;
+  display: none;
 }
 
 .top-menu {
@@ -23,17 +23,19 @@
   height: 50px;
   font-size: 24px;
   line-height: 50px;
+  background-color: #3d4043;
   color: #fffdfd;
   border-right: 2px solid #666666;
   display: block;
   float: left;
-  position:relative;
+  position: relative;
 }
 .top-menu .read {
   width: 212px;
   height: 50px;
   font-size: 24px;
   line-height: 50px;
+  background-color: #3d4043;
   color: #fffdfd;
   border-right: 2px solid #666666;
   display: block;
@@ -46,10 +48,11 @@
   font-size: 24px;
   line-height: 50px;
   padding-right: -50px;
+  background-color: #3d4043;
   color: #fffdfd;
   display: block;
   float: left;
-  position:relative;
+  position: relative;
 }
 /* top-menu */
 .top-menu .keyboard:hover {
