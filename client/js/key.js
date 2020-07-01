@@ -1,4 +1,4 @@
-blink_selected_key = (keyCode)=>{
+blink_selected_key = (keyCode) => {
   var 사각형_26 = document.querySelector(".사각형_26");
   var 사각형_27 = document.querySelector(".사각형_27");
   var 사각형_28 = document.querySelector(".사각형_28");
@@ -463,6 +463,6 @@ blink_selected_key = (keyCode)=>{
       사각형_103.classList.remove("tg");
     }, 100);
   }
-}
+};
 
 module.exports = blink_selected_key;
