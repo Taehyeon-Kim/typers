@@ -1,5 +1,6 @@
 const io = require('socket.io-client')
 const socket = io('http://localhost:3000');
+const splash = document.querySelector('.splash');
 require('./js/key');
 
 function key_blink({keyCode, user}){
@@ -19,7 +20,11 @@ socket.on('connect', ()=>{
 })
 socket.on('key_blink', key_blink);
 
-
+document.addEventListener('DOMContentLoaded', (e)=>{
+  setTimeout(()=>{
+    splash.classList.add('display-none');
+  }, 2000);
+});
 
 (()=>{
   const cafe_button = document.getElementById('button-cafe');
